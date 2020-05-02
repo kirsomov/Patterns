@@ -7,9 +7,13 @@ public:
     void Recovery();
     virtual ~Turret() = default;
 
-    int atk;
+    int GetAttack() override { return atk; }
+    int GetCost() override { return cost; }
 
-    const int cost = 200;
+    std::vector<std::string> GetCharacteristics() override;
+protected:
+    int atk;
+    static const int cost = 200;
 
     int shield_hp;
     int shield_max_hp;
