@@ -6,6 +6,11 @@ public:
     void Move();
     virtual ~Frigate() = default;
 
+    int GetAttack() override { return atk; }
+    int GetCost() override { return cost; }
+
+    std::vector<std::string> GetCharacteristics() override;
+protected:
     int atk;
 
     static const int cost = 150;
